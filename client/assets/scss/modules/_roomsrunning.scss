@@ -1,0 +1,90 @@
+// Force graph to respect container width
+roomsRunning {
+	text-align: center;
+	.title {
+		font-size: .8rem;
+		font-weight: 600;
+	}
+}
+
+.roomsBottomLabel {
+	width: 4%;
+	height: 30px;
+	margin: 0.7%;
+	padding: 1px;
+	font-size: .8rem;
+	display: inline-block;
+}
+
+ul.roomlegend {
+	width: 50%;
+	margin: 10px 0;
+	padding: 2px 0;
+	display: inline-block;
+	list-style: none;
+	font-size: .6rem;
+	text-align: center;
+	background-color: $primaryWhite;
+	@media (max-width: 480px) {
+		width: auto;
+		font-size: .5rem;
+		display: block;
+	}
+	li {
+		color: $primaryBlack;
+		width: 49%;
+		display: inline-block;
+		> span {
+			width: 20px;
+			height: 4px;
+			margin-right: 5px;
+			display: inline-block;
+			//@media (max-width: 480px) {
+			//	margin: 0 auto;
+			//	display: block;
+			//}
+		}
+	}
+	li:nth-child(1) > span {
+		//background-color: $secondaryBlue;
+		background-color: $secondaryGreen;
+	}
+	li:nth-child(2) > span {
+		//background-color: $secondaryGreen;
+		background-color: $primaryRed;
+	}
+	//li:nth-child(3) > span {
+	//	background-color: $primaryRed;
+	//}
+	//li:nth-child(4) > span {
+	//	height: 6px;
+	//	border: 1px solid $neutralGrey;
+	//	background-color: $primaryWhite;
+	//}
+}
+
+// Delete ul colored lines after they
+// have been added to Rooms Running SVG
+.roomhours {
+	ul {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		list-style: none;
+		li {
+			width: 33%;
+			height: 6px;
+			display: inline-block;
+		}
+		li:nth-child(1) {
+			background: #fff;
+		}
+		li:nth-child(2) {
+			background: #D0D0CE;
+		}
+		li:nth-child(3) {
+			background: #605D5D;
+		}
+	}
+}

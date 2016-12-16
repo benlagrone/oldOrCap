@@ -1,0 +1,22 @@
+.primary {
+	&.menu-bar {
+		align-items: stretch;
+		text-align: center;
+		font-weight: 800;
+		background-color: $primaryWhite;
+		li {
+			a {
+				color: $secondaryBlue;
+				&.is-active {
+					background-color: $secondaryBlue;
+				}
+			}
+		}
+		.title {
+			padding: 0;
+			color: $secondaryBlue;
+			flex: 1 0 auto;
+			align-self: center;
+		}
+	}
+}

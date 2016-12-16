@@ -1,0 +1,19 @@
+<div id="dataGrid" class="inner-grid">
+  <!-- flex-2x should be for large ORC doughnut SVG-->
+  <div ng-repeat="day in $parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.dailyMetricsList | orderBy:'order'" class="{{day.class}} data-item">
+    <div class="data-cell">
+      <div ng-class="{'percent':day.percent}" class="data-cell-group">
+
+        <doughnutgraph ng-if="day.percent" class="graph-item"></doughnutgraph>
+        <div class="data-label">
+          <div ng-if="!day.percent" class="chart-data">{{day.chartData}}</div>
+          <div class="data-label-group">
+            <i ng-if="!day.percent" class="orc {{day.icon}}"></i>
+            <span class="item-label">{{day.label}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

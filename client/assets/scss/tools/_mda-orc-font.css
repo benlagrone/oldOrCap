@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'mda-orc';
+	src:url('/assets/fonts/mda-orc/mda-orc.eot?ln5ovs');
+	src:url('/assets/fonts/mda-orc/mda-orc.eot?ln5ovs#iefix') format('embedded-opentype'),
+		url('/assets/fonts/mda-orc/mda-orc.ttf?ln5ovs') format('truetype'),
+		url('/assets/fonts/mda-orc/mda-orc.woff?ln5ovs') format('woff'),
+		url('/assets/fonts/mda-orc/mda-orc.svg?ln5ovs#mda-orc') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.orc {
+	display: inline-block;
+	font: normal normal normal 14px/1 mda-orc;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="orc-"], [class*=" orc-"] {
+	font-family: 'mda-orc';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.orc-2x {
+	font-size: 150%;
+}
+.orc-3x {
+	font-size: 200%;
+}
+.orc-4x {
+	font-size: 300%;
+}
+
+.orc-clock:before {
+	content: "\e90f";
+}
+.orc-clipboard:before {
+	content: "\e90b";
+}
+.orc-folder:before {
+	content: "\e90c";
+}
+.orc-gear:before {
+	content: "\e90d";
+}
+.orc-users:before {
+	content: "\e90e";
+}
+.orc-angle-left:before {
+	content: "\e900";
+}
+.orc-angle-right:before {
+	content: "\e901";
+}
+.orc-arrow-back:before {
+	content: "\e902";
+}
+.orc-arrow-next:before {
+	content: "\e903";
+}
+.orc-bars:before {
+	content: "\e904";
+}
+.orc-calendar:before {
+	content: "\e905";
+}
+.orc-filter-alt:before {
+	content: "\e906";
+}
+.orc-filter:before {
+	content: "\e907";
+}
+.orc-heartbeat-alt:before {
+	content: "\e908";
+}
+.orc-heartbeat:before {
+	content: "\e909";
+}
+.orc-stethoscope:before {
+	content: "\e90a";
+}

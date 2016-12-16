@@ -1,0 +1,64 @@
+<div class="title">Rooms Running</div>
+<ul class="roomlegend">
+  <li><span></span> Actual Rooms</li>
+  <li><span></span> Staff</li>
+</ul>
+<svg
+  ng-attr-height="{{$parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.roomsRunningChart.gridSVGHeight}}"
+  ng-attr-width="{{$parent.svgData.dailyMetricData.roomsRunningChart.gridSVGWidth}}"
+  ng-attr-viewBox="{{$parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.roomsRunningChart.viewBox}}"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  >
+  <defs>
+    <pattern
+      id="grid"
+      ng-attr-width="{{svgData.roomsRunningChart.chartWidth}}"
+      ng-attr-height="{{svgData.roomsRunningChart.chartHeight}}"
+      patternUnits="userSpaceOnUse"
+      >
+      <path
+        ng-attr-d="{{svgData.roomsRunningChart.d}}"
+        fill="none"
+        stroke="gray"
+        stroke-width="1"
+        />
+    </pattern>
+  </defs>
+  <rect
+    ng-attr-width="{{svgData.roomsRunningChart.rectangleWidth}}"
+    ng-attr-height="{{svgData.roomsRunningChart.rectangleHeight}}"
+    fill="url(#grid)"
+    />
+  <text
+    ng-repeat="(key,value) in $parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.roomsRunning| filter:query as results"
+    fill="rgb(65,131,49)"
+    ng-attr-x="{{(key+.4)*(100/results.length)+'%'}}"
+    ng-attr-y="{{(((1-(value.room_count/svgData.roomsRunningChart.lineBaseHeight))*100)-5)+'%'}}"
+    ng-attr-font-size="{{svgData.roomsRunningChart.lineTextSize}}">
+    {{value.room_count}}
+  </text>
+  {{$parent.svgData.dailyMetricData.roomsRunningChart.lineBaseHeight}}
+  <line
+    ng-repeat="(key,value) in $parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.roomsRunning| filter:query as results"
+    ng-attr-x1="{{((key+.4)*(100/results.length))+'%'}}"
+    y1="101%"
+    ng-attr-x2="{{(key+.4)*(100/results.length)+'%'}}"
+    ng-attr-y2="{{((1-(value.room_count/svgData.roomsRunningChart.lineBaseHeight))*100)+'%'}}"
+    ng-attr-style="{{svgData.roomsRunningChart.lineStyle}}"
+    />
+
+
+  <g ng-attr-transform={{svgData.roomsRunningChart.gTransform}}>
+  <polyline
+    height=100%"
+    ng-attr-width="{{svgData.roomsRunningChart.gridSVGWidth}}"
+    ng-attr-points="{{$parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.roomsRunningChart.staffLine.points}}"
+    ng-attr-style="{{svgData.roomsRunningChart.staffLine.style}}"
+    />
+  </g>
+</svg>
+<div class="roomhours">
+  <ul><li></li><li></li><li></li></ul>
+  <span class="roomsBottomLabel" ng-repeat="(key,value) in $parent.data.weeks[$parent.data.selected.indexArray[0]].days[$parent.data.selected.indexArray[1]].data.roomsRunning">{{value.shortTime}}</span>
+</div>

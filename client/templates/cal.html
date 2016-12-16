@@ -1,0 +1,29 @@
+<div class="header" ng-swipe-left="next()" ng-swipe-right="previous()">
+	<span class="left"><i class="orc orc-angle-left orc-2x" ng-click="previous()"></i></span>
+	<span class="showtoday" ng-click="zoomToday()"><i class="orc orc-heartbeat-alt" ></i> TODAY</span>
+	<span class="selectedDate">{{$parent.data.month.format("MMM DD, YYYY")}}</span>
+	<span class="right"><i class="orc orc-angle-right orc-2x" ng-click="next()"></i></span>
+</div>
+<div class="week names" ng-swipe-left="next()" ng-swipe-right="previous()">
+	<span class="day">Sun</span>
+	<span class="day">Mon</span>
+	<span class="day">Tue</span>
+	<span class="day">Wed</span>
+	<span class="day">Thu</span>
+	<span class="day">Fri</span>
+	<span class="day">Sat</span>
+</div>
+<div class="week {{key}}" ng-repeat="(key,value) in $parent.data.weeks" ng-swipe-left="next()" ng-swipe-right="previous()">
+
+	<div class="day {{key}} {{$index}}" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day,key,$index)" ng-repeat="day in value.days">
+		<div class="todayCorner" ng-show="day.isToday"></div>
+
+		<div class="dataGraph">
+			<doughnutgraph></doughnutgraph>
+		</div>
+		<div class="number">{{day.number}}</div>
+
+	</div>
+</div>
+
+

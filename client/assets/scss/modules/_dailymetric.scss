@@ -1,0 +1,109 @@
+// Daily Metric Content Blocks
+
+// flex-2x large phone and up
+@media (min-width: 375px) {
+	.data-grid .data-item.flex-2x {
+		.data-cell-group {
+			flex-direction: column;
+			.graph-item {
+				flex: 1 0 96px;
+				max-width: 96px;
+				max-height: 96px;
+				padding-right: 0;
+			}
+			.item-label {
+				margin-top: 10px;
+				font-size: 14px;
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+dailymetric.app-section {
+	flex: 0 0 auto;
+	background-color: $primaryWhite;
+}
+
+.data-item {
+	.data-cell {
+		background-color: $primaryWhite;
+	}
+	.chart-data {
+		margin-bottom: 5px;
+		//padding-left: 3px;
+		font-size: 28px;
+		font-weight: 500;
+		@media (max-width: 768px) {
+			font-size: 20px;
+		}
+	}
+	.data-label {
+		.item-label {
+			margin-left: 2px;
+			font-family: $minion;
+			@media (max-width: 768px) {
+				font-size: 14px;
+			}
+		}
+	}
+	.percent {
+		svg {
+			text {
+				font-size: 125px;
+			}
+		}
+		.data-label {
+			.item-label {
+				font-size: .9rem;
+				font-family: $univers;
+				@media (max-width: 768px) {
+					font-size: 12px;
+				}
+			}
+		}
+
+	}
+}
+
+.data-cell-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	align-items: center;
+	.graph-item {
+		max-width: 58px;
+		max-height: 58px;
+		padding-right: 10px;
+		order: 0;
+		flex: 1 0 58px;
+		align-self: center;
+	}
+	.data-label {
+		order: 0;
+		flex: 1 1 auto;
+		align-self: auto;
+	}
+}
+
+.data-label-group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+	i {
+		order: 0;
+		flex: 0 1 auto;
+		align-self: auto;
+		margin-right: 5px;
+	}
+	.item-label {
+		order: 0;
+		flex: 1 1 auto;
+		align-self: flex-end;
+	}
+}

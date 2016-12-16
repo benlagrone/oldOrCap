@@ -1,0 +1,36 @@
+<svg ng-attr-height="{{day.svg.height}}" ng-attr-width="{{day.svg.width}}" viewBox="0 0 400 400"
+     enable-background="new 0 0 400 400">
+  <circle fill="{{svgData.circles[0].fill}}"
+          stroke="{{svgData.circles[0].stroke}}"
+          stroke-width="{{svgData.circles[0].strokewidth}}"
+          ng-show="day.weekDay"
+          ng-attr-cx="{{svgData.circles[0].x}}"
+          ng-attr-cy="{{svgData.circles[0].y}}"
+          ng-attr-r="{{svgData.circles[0].r}}">
+  </circle>
+  <path
+    ng-attr-id={{day.$$hashKey}}
+    ng-attr-d={{day.pathData.path}}
+    ng-attr-fill="{{day.pathData.color}}">
+  </path>
+
+  <circle
+    fill="{{svgData.circles[1].fill}}"
+    stroke="{{svgData.circles[1].stroke}}"
+    stroke-width="{{svgData.circles[1].strokewidth}}"
+    ng-show="day.weekDay"
+    ng-attr-cx="{{svgData.circles[1].x}}"
+    ng-attr-cy="{{svgData.circles[1].y}}"
+    ng-attr-r="{{svgData.circles[1].r}}">
+  </circle>
+  <text
+    ng-attr-x="{{svgData.textData.x}}"
+    ng-attr-y="{{svgData.textData.y}}"
+    ng-attr-fill="{{day.pathData.color}}"
+    ng-show="day.weekDay"
+    dy=".3em"
+    font-size="100px"
+    font-weight="800">
+    {{day.chartData}}%
+  </text>
+</svg>

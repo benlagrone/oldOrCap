@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="application">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>OR Capacity</title>
+	<link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+	<script src="./assets/js/foundation.js"></script>
+	<script src="./assets/js/templates.js"></script>
+	<script src="./assets/js/routes.js"></script>
+	<script src="./assets/js/app.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-touch-icon-57x57.png?v=01c">
+	<link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-touch-icon-60x60.png?v=01c">
+	<link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-touch-icon-72x72.png?v=01c">
+	<link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon-76x76.png?v=01c">
+	<link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-touch-icon-114x114.png?v=01c">
+	<link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-touch-icon-120x120.png?v=01c">
+	<link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-touch-icon-144x144.png?v=01c">
+	<link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-touch-icon-152x152.png?v=01c">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon-180x180.png?v=01c">
+	<link rel="icon" type="image/png" href="./assets/favicon/favicon-32x32.png?v=01c" sizes="32x32">
+	<link rel="icon" type="image/png" href="./assets/favicon/favicon-194x194.png?v=01c" sizes="194x194">
+	<link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png?v=01c" sizes="96x96">
+	<link rel="icon" type="image/png" href="./assets/favicon/android-chrome-192x192.png?v=01c" sizes="192x192">
+	<link rel="icon" type="image/png" href="./assets/favicon/favicon-16x16.png?v=01c" sizes="16x16">
+	<link rel="manifest" href="./assets/favicon/manifest.json?v=01c">
+	<link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg?v=01c" color="#da291c">
+	<link rel="shortcut icon" href="favicon.ico?v=01c">
+	<meta name="apple-mobile-web-app-title" content="OR Capacity">
+	<meta name="application-name" content="OR Capacity">
+	<meta name="msapplication-TileColor" content="#da291c">
+	<meta name="msapplication-TileImage" content="./assets/favicon/mstile-144x144.png?v=01c">
+	<meta name="msapplication-config" content="./assets/favicon/browserconfig.xml?v=01c">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+
+<!--<zf-offcanvas id="menu" position="right">-->
+	<!--<div class="grid-content">-->
+		<!--<a zf-close="" class="close-button">&times;</a>-->
+		<!--<ul>-->
+			<!--<li><a ui-sref="calendar"><i class="fa fa-calendar"></i></a></li>-->
+			<!--<li><a ui-sref="preferences"><i class="fa fa-filter"></i></a></li>-->
+		<!--</ul>-->
+	<!--</div>-->
+<!--</zf-offcanvas>-->
+
+<div class="vertical grid-frame">
+	<div class="grid-content shrink">
+
+		<ul class="primary condense menu-bar">
+			<li class="title">OR Capacity</li>
+			<li ui-sref-active="is-active"><a ui-sref="calendar"><i class="orc orc-calendar"></i></a></li>
+			<li ui-sref-active="is-active"><a ui-sref="preferences"><i class="orc orc-filter-alt"></i></a></li>
+			<!--<li><a zf-open="menu"><i class="orc orc-bars"></i></a></li>-->
+		</ul>
+	</div>
+
+	<div id="framework" ui-view class="app-container flex-column" ng-class="display.orientation.class()" watch-resize></div>
+</div>
+
+</body>
+</html>

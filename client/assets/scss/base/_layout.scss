@@ -1,0 +1,174 @@
+// Application Shell Structure
+// -------------------------------
+
+.grid-frame {
+	@media (max-width: 768px) {
+		overflow-y: auto;
+	}
+}
+.grid-content {
+	padding: 0;
+}
+
+.app-container {
+	height: calc(100% - 50px);
+	display: flex;
+	flex-wrap: wrap;
+	border-top: 1px solid $secondaryBlue;
+	background-color:$primaryWhite;
+	&.flex-column {
+		flex-direction: column;
+	}
+	&.flex-row {
+		flex-direction: row;
+	}
+	@media (max-width: 768px) {
+		flex-wrap: nowrap;
+	}
+}
+
+.app-section {
+	order: 0;
+	flex: 0 0 auto;
+	align-self: auto;
+}
+
+.data-grid {
+	width: 40%;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	.data-item {
+		width: 100%;
+		height: 100px;
+		display: table;
+		break-inside: avoid;
+		border-bottom: 1px solid $neutralGreyLight;
+		border-right: 1px solid $neutralGreyLight;
+		&.flex-2x {
+			height: 200px;
+			text-align: center;
+			@media (max-width: 768px) {
+				height: 160px;
+			}
+			@media (max-width: 320px) {
+				height: 80px;
+				text-align: left;
+			}
+		}
+		.data-cell {
+			padding: 0 20px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		@media (max-width: 768px) {
+			height: 80px;
+		}
+	}
+	.inner-grid {
+		width: 100%;
+		height: 100%;
+		column-count: 2;
+		column-gap: 0;
+		column-fill: auto;
+		border-right: 1px solid $neutralGreyLight;
+		@media (max-width: 768px) {
+			column-count: 3;
+		}
+		@media (max-width: 414px) {
+			min-height: 0;
+			column-count: 2;
+		}
+		@media (max-width: 320px) {
+			min-height: 0;
+			column-count: 1;
+		}
+	}
+	@media (max-width: 768px) {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.data-graph,
+.data-calendar {
+	width: 60%;
+	@media (max-width: 768px) {
+		width: auto;
+	}
+}
+
+.data-graph {
+	height: 294px;
+	padding: 10px 0;
+	background-color: lighten($primaryBlack, 96);
+	@media (max-width: 768px) {
+		height: 330px;
+		padding: 10px 0;
+		&:after {
+			content: '';
+			display: block;
+			height: 0;
+			padding-bottom: 394px;
+		}
+	}
+	@media (max-width: 480px) {
+		&:after {
+			padding-bottom: 270px;
+		}
+	}
+}
+
+.data-calendar {
+	height: 394px;
+	flex: 1 0 auto;
+	align-self: flex-end;
+	background-color: $neutralGreyLightest;
+	@media (max-width: 768px) {
+		width: 100%;
+		bottom: 0;
+		flex: none;
+		z-index: 11;
+		position: fixed; // Leave for other browsers
+		position: sticky; // Fixes iOS position fixed jitter issue when added to Home Screen.
+	}
+	@media (max-width: 480px) {
+		height: 278px;
+	}
+}
+
+// NOTE:
+// This landscape class is for Phone only
+// This does not effect Phablet and Up
+.landscape {
+	.data-calendar {
+		width: 100%;
+		height: 100%;
+	}
+	calendar > .week {
+		height: inherit;
+		border-bottom: none;
+	}
+	calendar > .week > div.day {
+		height: initial;
+	}
+	.data-grid .inner-grid {
+		min-height: 0;
+		column-count: 1;
+	}
+	.data-grid .data-item {
+		border-right: none;
+	}
+	.data-grid .data-item .data-cell {
+		padding: 10px;
+	}
+	.data-item .chart-data {
+		margin-bottom: 10px;
+		font-size: 22px;
+		font-weight: 600;
+	}
+	.data-item .graph-item {
+		margin-right: 0;
+		float: none;
+	}
+}

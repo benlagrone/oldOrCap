@@ -1,0 +1,23 @@
+---
+name: preferences
+url: /preferences
+controller: PreferencesCtrl
+---
+
+<div class="grid-container preferences">
+
+<h1>Set Your Preferences</h1>
+  <label>Facility</label>
+<select name="facility" ng-model="preferences.facility" ng-options="item.optionValue as item.optionId for item in facilitiesOptions">
+</select>
+<label>Service</label>
+  <select name="service" ng-model="preferences.service" ng-options="item.optionValue as item.optionId for item in serviceOptions">
+  </select>
+<Label>Standby</Label>
+  <select name="standby" ng-model="preferences.standby" ng-options="item.optionValue as item.optionId for item in standbyOptions">
+  </select>
+<label>Roboblocks</label>
+  <select name="roboblocks" ng-model="preferences.roboblocks" ng-options="item.optionValue as item.optionId for item in roboblocksOptions">
+  </select>
+
+</div>

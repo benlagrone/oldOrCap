@@ -1,0 +1,37 @@
+<div class="header" ng-swipe-left="next()" ng-swipe-right="previous()">
+  <i class="orc-angle-left orc-2x left" ng-click="previous()"></i>
+  <i class="showtoday orc-heartbeat-alt" ng-click="zoomToday()"> TODAY</i>
+  <span class="selectedDate">{{month.format("MMMM DD, YYYY")}}</span>
+  <i class="forc-angle-right orc-2x right" ng-click="next()"></i>
+</div>
+<div class="week names" ng-swipe-left="next()" ng-swipe-right="previous()">
+  <span class="day">Sun</span>
+  <span class="day">Mon</span>
+  <span class="day">Tue</span>
+  <span class="day">Wed</span>
+  <span class="day">Thu</span>
+  <span class="day">Fri</span>
+  <span class="day">Sat</span>
+</div>
+
+
+<div class="week"
+     ng-repeat="week in singleWeek"
+     ng-swipe-left="next()"
+     ng-swipe-right="previous()"
+     style="height:100%"
+  >
+
+  <div class="day"
+       ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
+       ng-click="select(day)"
+       ng-repeat="day in week.days"
+    >
+    <div class="todayCorner" ng-show="day.isToday"></div>
+    <div class="number">{{day.number}}</div>
+
+    <weeklymetric  class="app-section data-grid" index="{{$index}}"></weeklymetric>
+
+
+  </div>
+</div>

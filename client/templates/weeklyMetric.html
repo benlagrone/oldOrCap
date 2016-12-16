@@ -1,0 +1,15 @@
+<div ng-repeat="data in week.days[$parent.$index].DailyMetricsList" >
+  <div class="data-cell">
+    <div ng-class="{'percent':data.percent}">
+      <doughnutgraph ng-if="data.percent" class="graph-item"></doughnutgraph>
+      <div class="chart-data" ng-if="!data.percent">{{data.chartData}}</div>
+      <div class="data-label">
+        <i ng-if="!data.percent" class="fa {{data.icon}}"></i>
+        <span class="item-label">{{data.label}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

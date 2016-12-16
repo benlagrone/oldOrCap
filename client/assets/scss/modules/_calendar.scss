@@ -1,0 +1,191 @@
+calendar {
+	width: 100%;
+	clear: both;
+	&.ng-animate {
+		display: block;
+		transition: 1s linear all;
+	}
+	&.ng-enter {
+		opacity: 0;
+		position: absolute;
+		left: 600px;
+	}
+	> .week {
+		width: 100%;
+		height: 55px;
+		float: left;
+		border-right: 1px solid $neutralGrey;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		@media (max-width: 480px) {
+			height: 36px;
+		}
+	}
+}
+
+calendar > .week {
+	&.names {
+		padding: 5px 0;
+		height: 18px;
+		color: $neutralGreyDark;
+		font-size: 9px;
+		background-color: rgb(213, 213, 213);
+	}
+	> {
+		span.day,
+		div.day {
+			float: left;
+			width: 14.256%;
+			display: inline-block;
+			position: relative;
+			border-bottom: 1px solid $neutralGrey;
+			border-left: 1px solid $neutralGrey;
+			&:first-of-type {
+				border-left: none;
+			}
+		}
+		div.day {
+			height: 55px;
+			background-color: $primaryWhite;
+			&.different-month,
+			&:first-of-type,
+			&:last-of-type {
+				background-color: $neutralGreyLightest;
+			}
+			@media (max-width: 480px) {
+				height: 36px;
+			}
+		}
+	}
+}
+
+calendar > .week {
+	&.names > .day {
+		border-left: 1px solid rgb(213, 213, 213);
+	}
+	> div.day .dataGraph {
+		height: 80%;
+		margin-top: 5%;
+		position: relative;
+	}
+}
+
+calendar > .week > div.day {
+	&.selected {
+		border: 1px solid #18a7f0;
+	}
+	> .number {
+		width: 30%;
+		top: 5%;
+		right: 5%;
+		float: right;
+		position: absolute;
+		text-align: right;
+		font-weight: bold;
+		font-size: .5rem;
+		background: transparent;
+		@media (max-width: 480px) {
+			font-size: 6px;
+		}
+	}
+	.today > .todayCorner,
+	.todayCorner {
+		width: 0;
+		height: 0;
+		position: absolute;
+		border-bottom: 14px solid transparent;
+		border-left: 14px solid $secondaryBlueLight;
+	}
+}
+
+calendar > {
+	div.header {
+		height: 44px;
+		color: $primaryWhite;
+		text-align: center;
+		background: $secondaryBlue;
+	}
+}
+
+calendar {
+	> div.header {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-content: stretch;
+		align-items: center;
+		.left, .right, .showtoday {
+			order: 0;
+			flex: 0 1 auto;
+			align-self: auto;
+		}
+		.left, .right {
+			width: 40px;
+		}
+		.selectedDate {
+			order: 0;
+			flex: 1 1 auto;
+			align-self: auto;
+		}
+		.showtoday {
+			font-size: .8rem;
+			font-family: $minion;
+		}
+		> {
+			i {
+				font-weight: bold;
+				padding: 0 10px;
+				cursor: pointer;
+			}
+			.selectedDate {
+				font-weight: bold;
+			}
+		}
+	}
+	.capData {
+		clear: left;
+		float: left;
+		position: relative;
+		&::after {
+			content: "%";
+		}
+	}
+}
+
+calendarblank {
+	position: absolute;
+	top: 84px;
+	right: 5000px;
+	display: none;
+	width: 100%;
+	clear: both;
+	float: left;
+	background: $primaryWhite;
+	margin-bottom: 10px;
+	&.ng-animate {
+		display: block;
+		transition: 1s linear all;
+	}
+	&.ng-enter {
+		opacity: 1;
+		position: absolute;
+		left: 600px;
+		&.ng-enter-active {
+			opacity: 0;
+			position: absolute;
+			left: 0;
+		}
+	}
+	&.ng-leave {
+		opacity: 1;
+		position: absolute;
+		left: 0;
+		&.ng-leave-active {
+			opacity: 0;
+			position: absolute;
+			left: 60px;
+		}
+	}
+}
